@@ -1,4 +1,5 @@
-from sentence_transformers import SentenceTransformer
+from langchain_community.embeddings import HuggingFaceBgeEmbeddings
 
-model = SentenceTransformer("all-MiniLM-L6-v2")
-print("Model loaded successfully.")
+embeddings = HuggingFaceBgeEmbeddings(model_name="BAAI/bge-small-en-v1.5")
+vector = embeddings.embed_query("What is blood pressure?")
+print(vector[:5])
