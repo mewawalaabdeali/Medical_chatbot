@@ -19,7 +19,7 @@ pc = Pinecone(api_key = PINECONE_API_KEY)
 index_name = "medicalbot"
 
 pc.create_index(
-    name - index_name,
+    name = index_name,
     dimension = 384,
     metric = "cosine",
     spec = ServerlessSpec(
